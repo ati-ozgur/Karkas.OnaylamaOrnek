@@ -5,12 +5,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using Karkas.Core.DataUtil;
+using Karkas.Core.DataUtil.BaseClasses;
 using Karkas.OnaylamaOrnek.TypeLibrary;
-using Karkas.OnaylamaOrnek.TypeLibrary.;
-using Karkas.OnaylamaOrnek.Dal.;
+using Karkas.OnaylamaOrnek.Dal;
 
 
-namespace Karkas.OnaylamaOrnek.Bs.
+namespace Karkas.OnaylamaOrnek.Bs
 {
 	public partial class MusteriBs : BaseBs<Musteri, MusteriDal>
 	{

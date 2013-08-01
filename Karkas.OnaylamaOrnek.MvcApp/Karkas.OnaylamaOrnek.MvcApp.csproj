@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Karkas.Core.Onaylama">
+      <HintPath>..\packages\Karkas.Core.Onaylama.1.0.0\lib\Karkas.Core.Onaylama.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />

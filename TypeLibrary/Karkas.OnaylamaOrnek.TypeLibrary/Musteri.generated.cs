@@ -10,18 +10,18 @@ using Karkas.Core.Onaylama;
 using Karkas.Core.Onaylama.ForPonos;
 using System.ComponentModel.DataAnnotations;
 
-namespace Karkas.OnaylamaOrnek.TypeLibrary.
+namespace Karkas.OnaylamaOrnek.TypeLibrary
 {
 	[Serializable]
 	[DebuggerDisplay("MusteriKey = {MusteriKey}")]
 	public partial class 	Musteri: BaseTypeLibrary
 	{
 		private long musteriKey;
-		private Unknown adi;
-		private Unknown soyadi;
-		private Unknown eposta;
+		private string adi;
+		private string soyadi;
+		private string eposta;
 		private Nullable<long> yasi;
-		private Unknown profilePicture;
+		private string profilePicture;
 
 		[Key]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -43,8 +43,9 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary.
 			}
 		}
 
+		[StringLength(0)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		public Unknown Adi
+		public string Adi
 		{
 			[DebuggerStepThrough]
 			get
@@ -62,8 +63,9 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary.
 			}
 		}
 
+		[StringLength(0)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		public Unknown Soyadi
+		public string Soyadi
 		{
 			[DebuggerStepThrough]
 			get
@@ -81,8 +83,9 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary.
 			}
 		}
 
+		[StringLength(0)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		public Unknown Eposta
+		public string Eposta
 		{
 			[DebuggerStepThrough]
 			get
@@ -119,8 +122,10 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary.
 			}
 		}
 
+		[StringLength(0)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		public Unknown ProfilePicture
+		public string ProfilePicture
 		{
 			[DebuggerStepThrough]
 			get
@@ -166,57 +171,6 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary.
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[XmlIgnore, SoapIgnore]
 		[ScaffoldColumn(false)]
-		public string AdiAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return adi != null ? adi.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				throw new ArgumentException("string'ten degisken tipine cevirim desteklenmemektedir");
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string SoyadiAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return soyadi != null ? soyadi.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				throw new ArgumentException("string'ten degisken tipine cevirim desteklenmemektedir");
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string EpostaAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return eposta != null ? eposta.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				throw new ArgumentException("string'ten degisken tipine cevirim desteklenmemektedir");
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
 		public string YasiAsString
 		{
 			[DebuggerStepThrough]
@@ -236,23 +190,6 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary.
 				{
 					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"Yasi",string.Format(CEVIRI_YAZISI,"Yasi","long")));
 				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string ProfilePictureAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return profilePicture != null ? profilePicture.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				throw new ArgumentException("string'ten degisken tipine cevirim desteklenmemektedir");
 			}
 		}
 

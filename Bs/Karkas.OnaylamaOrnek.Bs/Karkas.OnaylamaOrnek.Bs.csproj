@@ -30,7 +30,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Karkas.Core.DataUtil">
+      <HintPath>..\..\packages\Karkas.Core.DataUtil.1.0.0\lib\Karkas.Core.DataUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Karkas.Core.ExtensionsMethods">
+      <HintPath>..\..\packages\Karkas.Core.ExtensionsMethods.1.0.2\lib\Karkas.Core.ExtensionsMethods.dll</HintPath>
+    </Reference>
+    <Reference Include="Karkas.Core.Onaylama">
+      <HintPath>..\..\packages\Karkas.Core.Onaylama.1.0.0\lib\Karkas.Core.Onaylama.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,7 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MusteriBs.cs" />
+    <Compile Include="MusteriBs.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dal\Karkas.OnaylamaOrnek.Dal\Karkas.OnaylamaOrnek.Dal.csproj">
+      <Project>{47c7659b-0dca-476c-9498-e1c137399c69}</Project>
+      <Name>Karkas.OnaylamaOrnek.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TypeLibrary\Karkas.OnaylamaOrnek.TypeLibrary\Karkas.OnaylamaOrnek.TypeLibrary.csproj">
+      <Project>{4a2c8f5b-3e3a-4ac0-bbf2-e4f1b8e0cfcb}</Project>
+      <Name>Karkas.OnaylamaOrnek.TypeLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
