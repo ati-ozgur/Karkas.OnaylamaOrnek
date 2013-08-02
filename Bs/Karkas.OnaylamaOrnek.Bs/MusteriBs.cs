@@ -7,6 +7,7 @@ using System.Text;
 using Karkas.Core.DataUtil;
 using Karkas.OnaylamaOrnek.TypeLibrary;
 using Karkas.OnaylamaOrnek.Dal;
+using Karkas.Core.DataUtil.BaseClasses;
 
 
 namespace Karkas.OnaylamaOrnek.Bs

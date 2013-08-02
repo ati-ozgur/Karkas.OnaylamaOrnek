@@ -32,14 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Karkas.Core.DataUtil">
-      <HintPath>..\..\packages\Karkas.Core.DataUtil.1.0.0\lib\Karkas.Core.DataUtil.dll</HintPath>
+    <Reference Include="Karkas.Core.DataUtil, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Karkas.Core.DataUtil.1.0.10\lib\Karkas.Core.DataUtil.dll</HintPath>
     </Reference>
-    <Reference Include="Karkas.Core.ExtensionsMethods">
-      <HintPath>..\..\packages\Karkas.Core.ExtensionsMethods.1.0.2\lib\Karkas.Core.ExtensionsMethods.dll</HintPath>
+    <Reference Include="Karkas.Core.ExtensionsMethods, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Karkas.Core.ExtensionsMethods.1.0.10\lib\Karkas.Core.ExtensionsMethods.dll</HintPath>
     </Reference>
-    <Reference Include="Karkas.Core.Onaylama">
-      <HintPath>..\..\packages\Karkas.Core.Onaylama.1.0.0\lib\Karkas.Core.Onaylama.dll</HintPath>
+    <Reference Include="Karkas.Core.Onaylama, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Karkas.Core.Onaylama.1.0.10\lib\Karkas.Core.Onaylama.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
