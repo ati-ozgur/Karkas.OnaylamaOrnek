@@ -82,17 +82,17 @@ string pkName = GetPrimaryKeyName(mvcHost.ViewDataType);
 if (pkName != null) {
 #>
         <td>
-            @Html.ActionLink("Guncelle", "Güncelle", new { id=item.<#= pkName #> }, new { @class="btn" }) |
-            @Html.ActionLink("Detay", "Detay", new { id=item.<#= pkName #> }, new { @class="btn" }) |
-            @Html.ActionLink("Sil", "Sil", new { id=item.<#= pkName #> }, new { @class="btn" })
+            @Html.ActionLink("Güncelle", "Guncelle", new { key=item.<#= pkName #> }, new { @class="btn" }) |
+            @Html.ActionLink("Detay", "Detay", new { key=item.<#= pkName #> }, new { @class="btn" }) |
+            @Html.ActionLink("Sil", "Sil", new { key=item.<#= pkName #> }, new { @class="btn" })
         </td>
 <#
 } else {
 #>
         <td>
-            @Html.ActionLink("Guncelle", "Güncelle", new { /* id=item.PrimaryKey */ }, new { @class="btn" }) |
-            @Html.ActionLink("Detay", "Detay", new { /* id=item.PrimaryKey */ }, new { @class="btn" }) |
-            @Html.ActionLink("Sil", "Sil", new { /* id=item.PrimaryKey */ }, new { @class="btn" })
+            @Html.ActionLink("Güncelle", "Guncelle", new { /* key=item.PrimaryKey */ }, new { @class="btn" }) |
+            @Html.ActionLink("Detay", "Detay", new { /* key=item.PrimaryKey */ }, new { @class="btn" }) |
+            @Html.ActionLink("Sil", "Sil", new { /* key=item.PrimaryKey */ }, new { @class="btn" })
         </td>
 <#
 }

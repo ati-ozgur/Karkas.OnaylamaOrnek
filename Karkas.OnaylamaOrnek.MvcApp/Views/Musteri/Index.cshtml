@@ -38,8 +38,6 @@
             @Html.DisplayNameFor(model => model.ProfilePicture)
         </th>
 
-
-
         <th></th>
     </tr>
 	</thead>
@@ -67,9 +65,8 @@
             @Html.DisplayFor(modelItem => item.ProfilePicture)
         </td>
 
-
         <td>
-            @Html.ActionLink("Guncelle", "Güncelle", new { key=item.MusteriKey }, new { @class="btn" }) |
+            @Html.ActionLink("Güncelle", "Guncelle", new { key=item.MusteriKey }, new { @class="btn" }) |
             @Html.ActionLink("Detay", "Detay", new { key=item.MusteriKey }, new { @class="btn" }) |
             @Html.ActionLink("Sil", "Sil", new { key=item.MusteriKey }, new { @class="btn" })
         </td>
