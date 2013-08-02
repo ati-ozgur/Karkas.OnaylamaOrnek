@@ -35,7 +35,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
         }
 
         //
-        // GET: /Musteri/Create
+        // GET: /Musteri/Ekle
 
         public ActionResult Ekle()
         {
