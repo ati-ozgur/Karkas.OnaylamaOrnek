@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Karkas.Core.TypeLibrary;
 using log4net;
+using Newtonsoft.Json;
 
 
 namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
@@ -12,27 +14,60 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(_BaseKarkasController));
 
-        public void MesajEkleUyari(string mesaj)
+        public void MesajEkleUyari(string mesaj, BaseTypeLibrary dto = null)
         {
             TempData.Add(Alarmlar.UYARI, mesaj);
-            log.Warn(mesaj);
+            if (dto == null)
+            {
+                log.Warn(mesaj);
+            }
+            else
+            {
+                string json = JsonConvert.SerializeObject(dto);
+                log.Warn(mesaj + "json : " + json);
+            }
         }
-        public void MesajEkleBasari(string mesaj)
+
+        public void MesajEkleBasari(string mesaj, BaseTypeLibrary dto = null)
         {
             TempData.Add(Alarmlar.BASARILI, mesaj);
-            log.Debug(mesaj);
+            if (dto == null)
+            {
+                log.Debug(mesaj);
+            }
+            else
+            {
+                string json = JsonConvert.SerializeObject(dto);
+                log.Debug(mesaj + "json : " + json);
+            }
         }
 
-        public void MesajEkleBilgi(string mesaj)
+        public void MesajEkleBilgi(string mesaj, BaseTypeLibrary dto = null)
         {
             TempData.Add(Alarmlar.BILGI, mesaj);
-            log.Info(mesaj);
+            if (dto == null)
+            {
+                log.Info(mesaj);
+            }
+            else
+            {
+                string json = JsonConvert.SerializeObject(dto);
+                log.Info(mesaj + "json : " + json);
+            }
         }
 
-        public void MesajEkleHata(string mesaj)
+        public void MesajEkleHata(string mesaj, Exception ex = null, BaseTypeLibrary dto = null)
         {
             TempData.Add(Alarmlar.HATA, mesaj);
-            log.Error(mesaj);
+            if (dto == null)
+            {
+                log.Error(mesaj,ex);
+            }
+            else
+            {
+                string json = JsonConvert.SerializeObject(dto);
+                log.Error(mesaj + "json : " + json,ex);
+            }
         }
 
     }
