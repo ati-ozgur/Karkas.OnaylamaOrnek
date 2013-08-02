@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Karkas.Web.Mvc.Controllers;
 
 namespace <#= mvcHost.Namespace #>
 {
@@ -45,7 +46,7 @@ if(mvcHost.AddActionMethods) {
         }
 
         //
-        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Create
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Ekle
 
         public ActionResult Ekle()
         {

@@ -42,6 +42,11 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
             }
         }
 
+        public void MesajEkleBasariStandart(BaseTypeLibrary dto = null)
+        {
+
+        }
+
         public void MesajEkleBilgi(string mesaj, BaseTypeLibrary dto = null)
         {
             TempData[Alarmlar.BILGI] = mesaj;
