@@ -14,7 +14,9 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 
         public ActionResult Index()
         {
-            return View();
+			MusteriBs bs = new MusteriBs();
+			var list = bs.SorgulaHepsiniGetir();
+			return View(list);
         }
 
         //
@@ -23,7 +25,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
         public ActionResult Detay(int key)
         {
 			MusteriBs bs = new MusteriBs();
-			var dto = bs.SorgulaMusteriKeyIle(key);
+			Musteri dto = bs.SorgulaMusteriKeyIle(key);
 			if (dto == null)
 			{
 				return HttpNotFound();

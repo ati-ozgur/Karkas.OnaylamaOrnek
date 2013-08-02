@@ -22,7 +22,9 @@ namespace <#= mvcHost.Namespace #>
 
         public ActionResult Index()
         {
-            return View();
+			<#= bsClassName #> bs = new <#= bsClassName #>();
+			var list = bs.SorgulaHepsiniGetir();
+			return View(list);
         }
 
 <#
@@ -34,7 +36,7 @@ if(mvcHost.AddActionMethods) {
         public ActionResult Detay(int key)
         {
 			<#= bsClassName #> bs = new <#= bsClassName #>();
-			var dto = bs.Sorgula<#=typeLibraryClassName #>KeyIle(key);
+			<#=typeLibraryClassName #> dto = bs.Sorgula<#=typeLibraryClassName #>KeyIle(key);
 			if (dto == null)
 			{
 				return HttpNotFound();
