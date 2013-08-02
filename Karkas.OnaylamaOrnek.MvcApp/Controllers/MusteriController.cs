@@ -61,7 +61,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 				}
 				catch (Exception ex)
 				{
-					ModelState.AddModelError("", "Ekleme İşlemi Sırasında Hata oluştu" + ex.Message);
+					MesajEkleHata("Ekleme İşlemi Sırasında Hata oluştu",ex,dto);
 				}
 				return View(dto);
         }
@@ -69,47 +69,64 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
         //
         // GET: /Musteri/Guncelle/5
 
-        public ActionResult Guncelle(int id)
+        public ActionResult Guncelle(int key)
         {
-            return View();
+			MusteriBs bs = new MusteriBs();
+			Musteri dto = bs.SorgulaMusteriKeyIle(key);
+			if (dto == null)
+			{
+				return HttpNotFound();
+			}
+			return View(dto);
         }
 
         //
-        // POST: /Musteri/Edit/5
+        // POST: /Musteri/Guncelle/5
 
         [HttpPost]
-        public ActionResult Guncelle(int id, FormCollection collection)
+        public ActionResult Guncelle(int id, Musteri dto)
+        {
+			  try
+				{
+					if (ModelState.IsValid)
+					{
+						MusteriBs bs = new MusteriBs();
+						bs.Guncelle(dto);
+						MesajEkleBasari("Musteri  başarı ile güncellenmiştir");
+						return RedirectToAction("Index");
+					}
+				}
+				catch (Exception ex)
+				{
+					MesajEkleHata("Ekleme İşlemi Sırasında Hata oluştu",ex,dto);
+				}
+				return View(dto);
+        }
+
+        //
+        // GET: /Musteri/Sil/5
+
+        public ActionResult Sil(int key)
+        {
+         	MusteriBs bs = new MusteriBs();
+			Musteri dto = bs.SorgulaMusteriKeyIle(key);
+			if (dto == null)
+			{
+				return HttpNotFound();
+			}
+			return View(dto);
+        }
+
+        //
+        // POST: /Musteri/Sil/5
+
+        [HttpPost]
+        public ActionResult Sil(int key,  Musteri dto)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Musteri/Delete/5
-
-        public ActionResult Sil(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Musteri/Delete/5
-
-        [HttpPost]
-        public ActionResult Sil(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
+	         	MusteriBs bs = new MusteriBs();
+				bs.Sil(key);
                 return RedirectToAction("Index");
             }
             catch
