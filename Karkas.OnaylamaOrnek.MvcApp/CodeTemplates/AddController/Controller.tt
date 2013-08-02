@@ -53,25 +53,30 @@ if(mvcHost.AddActionMethods) {
         }
 
         //
-        // POST: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Create
+        // POST: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Ekle
 
         [HttpPost]
-        public ActionResult Ekle(FormCollection collection)
+		[ValidateAntiForgeryToken]
+        public ActionResult Ekle(<#=typeLibraryClassName #> dto)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+			  try
+				{
+					if (ModelState.IsValid)
+					{
+						<#= bsClassName #> bs = new <#= bsClassName #>();
+						bs.Ekle(dto);
+						return RedirectToAction("Index");
+					}
+				}
+				catch (Exception ex)
+				{
+					ModelState.AddModelError("", "Ekleme İşlemi Sırasında Hata oluştu" + ex.Message);
+				}
+				return View(dto);
         }
 
         //
-        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Edit/5
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Guncelle/5
 
         public ActionResult Guncelle(int id)
         {

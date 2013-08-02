@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Karkas.OnaylamaOrnek.Bs;
+using Karkas.OnaylamaOrnek.TypeLibrary;
 
 namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 {
@@ -42,25 +43,30 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
         }
 
         //
-        // POST: /Musteri/Create
+        // POST: /Musteri/Ekle
 
         [HttpPost]
-        public ActionResult Ekle(FormCollection collection)
+		[ValidateAntiForgeryToken]
+        public ActionResult Ekle(Musteri dto)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+			  try
+				{
+					if (ModelState.IsValid)
+					{
+						MusteriBs bs = new MusteriBs();
+						bs.Ekle(dto);
+						return RedirectToAction("Index");
+					}
+				}
+				catch (Exception ex)
+				{
+					ModelState.AddModelError("", "Ekleme İşlemi Sırasında Hata oluştu" + ex.Message);
+				}
+				return View(dto);
         }
 
         //
-        // GET: /Musteri/Edit/5
+        // GET: /Musteri/Guncelle/5
 
         public ActionResult Guncelle(int id)
         {
