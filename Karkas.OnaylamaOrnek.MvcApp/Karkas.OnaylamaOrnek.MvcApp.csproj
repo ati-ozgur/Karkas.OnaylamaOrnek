@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -311,6 +313,20 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bs\Karkas.OnaylamaOrnek.Bs\Karkas.OnaylamaOrnek.Bs.csproj">
+      <Project>{9b642ae1-7fd2-4f87-a86a-bf679b4e8c4e}</Project>
+      <Name>Karkas.OnaylamaOrnek.Bs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dal\Karkas.OnaylamaOrnek.Dal\Karkas.OnaylamaOrnek.Dal.csproj">
+      <Project>{47c7659b-0dca-476c-9498-e1c137399c69}</Project>
+      <Name>Karkas.OnaylamaOrnek.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TypeLibrary\Karkas.OnaylamaOrnek.TypeLibrary\Karkas.OnaylamaOrnek.TypeLibrary.csproj">
+      <Project>{4a2c8f5b-3e3a-4ac0-bbf2-e4f1b8e0cfcb}</Project>
+      <Name>Karkas.OnaylamaOrnek.TypeLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -339,6 +355,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

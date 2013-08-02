@@ -11,6 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.OnaylamaOrnek.Bs", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{A744423F-92C6-4900-8B35-578881A78B58}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E2DBE2DC-9148-4309-A3FF-A819899F0FCA}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,8 +45,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{47C7659B-0DCA-476C-9498-E1C137399C69} = {A744423F-92C6-4900-8B35-578881A78B58}
 		{9B642AE1-7FD2-4F87-A86A-BF679B4E8C4E} = {A744423F-92C6-4900-8B35-578881A78B58}
 		{4A2C8F5B-3E3A-4AC0-BBF2-E4F1B8E0CFCB} = {A744423F-92C6-4900-8B35-578881A78B58}
-		{47C7659B-0DCA-476C-9498-E1C137399C69} = {A744423F-92C6-4900-8B35-578881A78B58}
 	EndGlobalSection
 EndGlobal
