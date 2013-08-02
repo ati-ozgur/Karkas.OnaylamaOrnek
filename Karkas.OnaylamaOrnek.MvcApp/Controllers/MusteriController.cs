@@ -8,7 +8,7 @@ using Karkas.OnaylamaOrnek.TypeLibrary;
 
 namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 {
-    public class MusteriController : Controller
+    public class MusteriController : _BaseKarkasController
     {
         //
         // GET: /Musteri/
@@ -55,6 +55,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 					{
 						MusteriBs bs = new MusteriBs();
 						bs.Ekle(dto);
+						MesajEkleBasari(" Musteri  başarı ile eklenmiştir");
 						return RedirectToAction("Index");
 					}
 				}
