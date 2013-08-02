@@ -350,10 +350,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Musteri\Detay.cshtml" />
-    <Content Include="Views\Musteri\Ekle.cshtml" />
     <Content Include="Views\Musteri\Index.cshtml" />
+    <Content Include="Views\Musteri\Ekle.cshtml" />
     <Content Include="Views\Musteri\Guncelle.cshtml" />
+    <Content Include="Views\Musteri\Sil.cshtml" />
+    <Content Include="Views\Musteri\Detay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

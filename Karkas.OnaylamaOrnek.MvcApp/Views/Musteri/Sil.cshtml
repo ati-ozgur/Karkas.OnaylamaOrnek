@@ -6,13 +6,14 @@
 
 
 @{
-    ViewBag.Title = "Detay";
+    ViewBag.Title = "Sil";
 
 }
 
-<h2>Detay</h2>
+<h2>Sil</h2>
 
 
+<h3>Silmek istediğinize Emin Misiniz?</h3>
 <fieldset>
     <legend>Musteri</legend>
 
@@ -20,57 +21,59 @@
     <dl class="dl-horizontal">
 		<dt>
 			@Html.DisplayNameFor(model => model.Adi)
-		</dt>
+		</dt>    
 		<dd>
 			@Html.DisplayFor(model => model.Adi)
 		</dd>
-	</dl>
+    </dl>
 
 
     <dl class="dl-horizontal">
 		<dt>
 			@Html.DisplayNameFor(model => model.Soyadi)
-		</dt>
+		</dt>    
 		<dd>
 			@Html.DisplayFor(model => model.Soyadi)
 		</dd>
-	</dl>
+    </dl>
 
 
     <dl class="dl-horizontal">
 		<dt>
 			@Html.DisplayNameFor(model => model.Eposta)
-		</dt>
+		</dt>    
 		<dd>
 			@Html.DisplayFor(model => model.Eposta)
 		</dd>
-	</dl>
+    </dl>
 
 
     <dl class="dl-horizontal">
 		<dt>
 			@Html.DisplayNameFor(model => model.Yasi)
-		</dt>
+		</dt>    
 		<dd>
 			@Html.DisplayFor(model => model.Yasi)
 		</dd>
-	</dl>
+    </dl>
 
 
     <dl class="dl-horizontal">
 		<dt>
 			@Html.DisplayNameFor(model => model.ProfilePicture)
-		</dt>
+		</dt>    
 		<dd>
 			@Html.DisplayFor(model => model.ProfilePicture)
 		</dd>
-	</dl>
+    </dl>
 
 </fieldset>
-<p>
+@using (Html.BeginForm()) {
+    <div class="control-group">
+		<div class="controls">
+			<input type="submit" value="Sil" class="btn" /> &nbsp; @Html.ActionLink("Vazgeç", "Index")
+		</div>
+    </div>
+}
 
-    @Html.ActionLink("Güncelle", "Guncelle", new { key=Model.MusteriKey }) |
-    @Html.ActionLink("Listeye Geri Dön", "Index")
-
-</p>
 
