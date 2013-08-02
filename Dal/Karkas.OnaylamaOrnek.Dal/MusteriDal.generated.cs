@@ -24,6 +24,7 @@ public partial class MusteriDal : BaseDal<Musteri>
 	}
 	protected override void identityKolonDegeriniSetle(Musteri pTypeLibrary,long pIdentityKolonValue)
 	{
+		pTypeLibrary.MusteriKey = (long )pIdentityKolonValue;
 	}
 	protected override string SelectCountString
 	{
@@ -68,9 +69,9 @@ public partial class MusteriDal : BaseDal<Musteri>
 		get 
 		{
 			return @"INSERT INTO Musteri 
-			 (MusteriKey,Adi,Soyadi,EPosta,Yasi,ProfilePicture) 
+			 (Adi,Soyadi,EPosta,Yasi,ProfilePicture) 
 			 VALUES 
-						(@MusteriKey,@Adi,@Soyadi,@EPosta,@Yasi,@ProfilePicture)";
+						(@Adi,@Soyadi,@EPosta,@Yasi,@ProfilePicture);select last_insert_rowid();";
 		}
 	}
 	public Musteri SorgulaMusteriKeyIle(long p1)
@@ -91,7 +92,7 @@ public partial class MusteriDal : BaseDal<Musteri>
 	{
 		get
 		{
-			return false;
+			return true;
 		}
 	}
 	
@@ -137,7 +138,6 @@ public partial class MusteriDal : BaseDal<Musteri>
 	{
 		ParameterBuilder builder = Template.getParameterBuilder();
 		builder.Command = cmd;
-		builder.parameterEkle("@MusteriKey",DbType.Int64, satir.MusteriKey);
 		builder.parameterEkle("@Adi",DbType.String, satir.Adi);
 		builder.parameterEkle("@Soyadi",DbType.String, satir.Soyadi);
 		builder.parameterEkle("@EPosta",DbType.String, satir.Eposta);
