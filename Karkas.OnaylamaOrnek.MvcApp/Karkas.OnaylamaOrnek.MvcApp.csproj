@@ -352,6 +352,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Musteri\Index.cshtml" />
     <Content Include="Views\Musteri\Detay.cshtml" />
+    <Content Include="Views\Musteri\Ekle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

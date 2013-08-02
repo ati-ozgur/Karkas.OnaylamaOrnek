@@ -43,7 +43,6 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary
 			}
 		}
 
-		[StringLength(0)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Adi
 		{
@@ -63,7 +62,6 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary
 			}
 		}
 
-		[StringLength(0)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Soyadi
 		{
@@ -83,7 +81,6 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary
 			}
 		}
 
-		[StringLength(0)]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Eposta
 		{
@@ -122,7 +119,6 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary
 			}
 		}
 
-		[StringLength(0)]
 		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ProfilePicture

@@ -1,17 +1,6 @@
-﻿<#@ template language="C#" HostSpecific="True" #>
-<#@ output extension=".cshtml" #>
-<#@ assembly name="System.ComponentModel.DataAnnotations" #>
-<#@ assembly name="System.Core" #>
-<#@ assembly name="System.Data.Entity" #>
-<#@ assembly name="System.Data.Linq" #>
-<#@ import namespace="System" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.ComponentModel.DataAnnotations" #>
-<#@ import namespace="System.Data.Linq.Mapping" #>
-<#@ import namespace="System.Data.Objects.DataClasses" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Reflection" #>
-<#@ import namespace="Microsoft.VisualStudio.Web.Mvc.Scaffolding.BuiltIn" #>
+﻿<#@ template language="C#" HostSpecific="True" #><#@ output extension=".cshtml" #>
+<#@ assembly name="System.ComponentModel.DataAnnotations" #><#@ assembly name="System.Core" #><#@ assembly name="System.Data.Entity" #><#@ assembly name="System.Data.Linq" #>
+<#@ import namespace="System" #><#@ import namespace="System.Collections.Generic" #><#@ import namespace="System.ComponentModel.DataAnnotations" #><#@ import namespace="System.Data.Linq.Mapping" #><#@ import namespace="System.Data.Objects.DataClasses" #><#@ import namespace="System.Linq" #><#@ import namespace="System.Reflection" #><#@ import namespace="Microsoft.VisualStudio.Web.Mvc.Scaffolding.BuiltIn" #>
 <#
 MvcTextTemplateHost mvcHost = MvcTemplateHost;
 #>
@@ -117,7 +106,7 @@ foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
 #>
         <div class="control-group">
 			<div class="controls">
-				<input type="submit" value="Create" class="btn" /> &nbsp; @Html.ActionLink("Cancel", "Index")
+				<input type="submit" value="Ekle" class="btn" /> &nbsp; @Html.ActionLink("Vazgeç", "Index")
 			</div>
         </div>
     </fieldset>

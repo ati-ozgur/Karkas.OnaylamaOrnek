@@ -16,7 +16,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 
         public void MesajEkleUyari(string mesaj, BaseTypeLibrary dto = null)
         {
-            TempData.Add(Alarmlar.UYARI, mesaj);
+            TempData[Alarmlar.UYARI] = mesaj;
             if (dto == null)
             {
                 log.Warn(mesaj);
@@ -30,7 +30,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 
         public void MesajEkleBasari(string mesaj, BaseTypeLibrary dto = null)
         {
-            TempData.Add(Alarmlar.BASARILI, mesaj);
+            TempData[Alarmlar.BASARILI] = mesaj;
             if (dto == null)
             {
                 log.Debug(mesaj);
@@ -44,7 +44,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 
         public void MesajEkleBilgi(string mesaj, BaseTypeLibrary dto = null)
         {
-            TempData.Add(Alarmlar.BILGI, mesaj);
+            TempData[Alarmlar.BILGI] = mesaj;
             if (dto == null)
             {
                 log.Info(mesaj);
@@ -58,7 +58,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 
         public void MesajEkleHata(string mesaj, Exception ex = null, BaseTypeLibrary dto = null)
         {
-            TempData.Add(Alarmlar.HATA, mesaj);
+            TempData[Alarmlar.HATA] = mesaj;
             if (dto == null)
             {
                 log.Error(mesaj,ex);
