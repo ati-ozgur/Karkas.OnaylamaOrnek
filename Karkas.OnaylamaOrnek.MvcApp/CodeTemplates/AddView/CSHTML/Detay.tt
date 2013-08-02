@@ -1,18 +1,6 @@
-﻿<#@ template language="C#" HostSpecific="True" #>
-<#@ output extension=".cshtml" #>
-<#@ import namespace="Microsoft.VisualStudio.Web.Mvc.Scaffolding.BuiltIn" #>
-<#@ assembly name="System.ComponentModel.DataAnnotations" #>
-<#@ assembly name="System.Core" #>
-<#@ assembly name="System.Data.Entity" #>
-<#@ assembly name="System.Data.Linq" #>
-<#@ import namespace="System" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.ComponentModel.DataAnnotations" #>
-<#@ import namespace="System.Data.Linq.Mapping" #>
-<#@ import namespace="System.Data.Objects.DataClasses" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Reflection" #>
-<#@ import namespace="Microsoft.VisualStudio.Web.Mvc.Scaffolding.BuiltIn" #>
+﻿<#@ template language="C#" HostSpecific="True" #><#@ output extension=".cshtml" #><#@ assembly name="System.ComponentModel.DataAnnotations" #>
+<#@ assembly name="System.Core" #><#@ assembly name="System.Data.Entity" #><#@ assembly name="System.Data.Linq" #>
+<#@ import namespace="Microsoft.VisualStudio.Web.Mvc.Scaffolding.BuiltIn" #><#@ import namespace="System" #><#@ import namespace="System.Collections.Generic" #><#@ import namespace="System.ComponentModel.DataAnnotations" #><#@ import namespace="System.Data.Linq.Mapping" #><#@ import namespace="System.Data.Objects.DataClasses" #><#@ import namespace="System.Linq" #><#@ import namespace="System.Reflection" #><#@ import namespace="Microsoft.VisualStudio.Web.Mvc.Scaffolding.BuiltIn" #>
 <#
 MvcTextTemplateHost mvcHost = MvcTemplateHost;
 #>
@@ -84,13 +72,13 @@ foreach (ModelProperty property in GetModelProperties(mvcHost.ViewDataType)) {
 string pkName = GetPrimaryKeyName(mvcHost.ViewDataType);
 if (pkName != null) {
 #>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.<#= pkName #> }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Guncelle", "Güncelle", new { id=Model.<#= pkName #> }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
 <#
 } else {
 #>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Guncelle", "Güncelle", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
 <#
 }
 #>

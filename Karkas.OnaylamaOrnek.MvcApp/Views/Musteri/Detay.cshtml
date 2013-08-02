@@ -1,0 +1,76 @@
+﻿
+
+
+
+@model Karkas.OnaylamaOrnek.TypeLibrary.Musteri
+
+
+@{
+    ViewBag.Title = "Detay";
+
+}
+
+<h2>Detay</h2>
+
+
+<fieldset>
+    <legend>Musteri</legend>
+
+
+    <dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Adi)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Adi)
+		</dd>
+	</dl>
+
+
+    <dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Soyadi)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Soyadi)
+		</dd>
+	</dl>
+
+
+    <dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Eposta)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Eposta)
+		</dd>
+	</dl>
+
+
+    <dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Yasi)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.Yasi)
+		</dd>
+	</dl>
+
+
+    <dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.ProfilePicture)
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.ProfilePicture)
+		</dd>
+	</dl>
+
+</fieldset>
+<p>
+
+    @Html.ActionLink("Guncelle", "Güncelle", new { id=Model.MusteriKey }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+
+</p>
+
