@@ -18,7 +18,7 @@ namespace Karkas.OnaylamaOrnek.Bs
 		{
 			get
 			{
-				return "Karkas.Onaylama";
+				return "Karkas.OnaylamaOrnek";
 			}
 		}
 		public void Sil(long pMusteriKey)
