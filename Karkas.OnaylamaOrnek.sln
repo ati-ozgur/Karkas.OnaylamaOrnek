@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.OnaylamaOrnek.Dal", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.OnaylamaOrnek.Bs", "Bs\Karkas.OnaylamaOrnek.Bs\Karkas.OnaylamaOrnek.Bs.csproj", "{9B642AE1-7FD2-4F87-A86A-BF679B4E8C4E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{A744423F-92C6-4900-8B35-578881A78B58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,5 +36,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9B642AE1-7FD2-4F87-A86A-BF679B4E8C4E} = {A744423F-92C6-4900-8B35-578881A78B58}
+		{4A2C8F5B-3E3A-4AC0-BBF2-E4F1B8E0CFCB} = {A744423F-92C6-4900-8B35-578881A78B58}
+		{47C7659B-0DCA-476C-9498-E1C137399C69} = {A744423F-92C6-4900-8B35-578881A78B58}
 	EndGlobalSection
 EndGlobal
