@@ -109,7 +109,7 @@ if(mvcHost.AddActionMethods) {
 				}
 				catch (Exception ex)
 				{
-					MesajEkleHata("Ekleme İşlemi Sırasında Hata oluştu",ex,dto);
+					MesajEkleHata("Güncelleme İşlemi Sırasında Hata oluştu",ex,dto);
 				}
 				return View(dto);
         }
@@ -140,9 +140,10 @@ if(mvcHost.AddActionMethods) {
 				bs.Sil(key);
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+				MesajEkleHata("Silme İşlemi Sırasında Hata oluştu",ex,dto);
+                return View(dto);
             }
         }
 <#

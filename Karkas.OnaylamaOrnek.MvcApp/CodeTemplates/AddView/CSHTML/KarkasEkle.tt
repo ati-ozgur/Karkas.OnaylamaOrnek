@@ -62,6 +62,7 @@ if (mvcHost.ReferenceScriptLibraries) {
 }
 #>
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>

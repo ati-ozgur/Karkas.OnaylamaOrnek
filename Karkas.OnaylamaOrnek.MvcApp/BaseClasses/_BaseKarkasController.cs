@@ -8,7 +8,7 @@ using log4net;
 using Newtonsoft.Json;
 
 
-namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
+namespace Karkas.Web.Mvc.Controllers
 {
     public class _BaseKarkasController : Controller
     {

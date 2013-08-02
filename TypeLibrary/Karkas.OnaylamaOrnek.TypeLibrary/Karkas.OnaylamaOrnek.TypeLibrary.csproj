@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="Karkas.Core.Onaylama, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Karkas.Core.Onaylama.1.0.11\lib\Karkas.Core.Onaylama.dll</HintPath>
+      <HintPath>..\..\packages\Karkas.Core.Onaylama.1.0.12\lib\Karkas.Core.Onaylama.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

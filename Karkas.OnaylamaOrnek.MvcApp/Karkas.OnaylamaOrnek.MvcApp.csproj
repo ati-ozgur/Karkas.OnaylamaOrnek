@@ -43,15 +43,15 @@
   <ItemGroup>
     <Reference Include="Karkas.Core.DataUtil, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Karkas.Core.DataUtil.1.0.11\lib\Karkas.Core.DataUtil.dll</HintPath>
+      <HintPath>..\packages\Karkas.Core.DataUtil.1.0.12\lib\Karkas.Core.DataUtil.dll</HintPath>
     </Reference>
     <Reference Include="Karkas.Core.ExtensionsMethods, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Karkas.Core.ExtensionsMethods.1.0.11\lib\Karkas.Core.ExtensionsMethods.dll</HintPath>
+      <HintPath>..\packages\Karkas.Core.ExtensionsMethods.1.0.12\lib\Karkas.Core.ExtensionsMethods.dll</HintPath>
     </Reference>
     <Reference Include="Karkas.Core.Onaylama, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Karkas.Core.Onaylama.1.0.11\lib\Karkas.Core.Onaylama.dll</HintPath>
+      <HintPath>..\packages\Karkas.Core.Onaylama.1.0.12\lib\Karkas.Core.Onaylama.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
@@ -204,10 +204,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BaseClasses\_BaseKarkasController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MusteriController.cs" />
-    <Compile Include="Controllers\_BaseKarkasController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -272,23 +272,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="CodeTemplates\AddView\CSHTML\KarkasSil.tt">
-      <LastGenOutput>Sil.cshtml</LastGenOutput>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\KarkasListe.tt">
-      <LastGenOutput>Liste.cshtml</LastGenOutput>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\KarkasGuncelle.tt">
-      <LastGenOutput>Guncelle.cshtml</LastGenOutput>
-    </Content>
     <Content Include="CodeTemplates\AddView\CSHTML\KarkasEkle.tt">
       <LastGenOutput>Ekle.cshtml</LastGenOutput>
-    </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\KarkasDetay.tt">
-      <LastGenOutput>Detay.cshtml</LastGenOutput>
-    </Content>
-    <Content Include="CodeTemplates\AddController\Controller.tt">
-      <LastGenOutput>Controller.cs</LastGenOutput>
     </Content>
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -296,6 +281,19 @@
     <Content Include="x86\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\KarkasSil.tt">
+      <LastGenOutput>KarkasSil.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\KarkasListe.tt">
+      <LastGenOutput>KarkasListe.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\KarkasGuncelle.tt">
+      <LastGenOutput>KarkasGuncelle.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\KarkasDetay.tt">
+      <LastGenOutput>KarkasDetay.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddController\Controller.tt" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -351,10 +349,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Musteri\Index.cshtml" />
-    <Content Include="Views\Musteri\Ekle.cshtml" />
+    <Content Include="Views\Musteri\Detay.cshtml" />
     <Content Include="Views\Musteri\Guncelle.cshtml" />
     <Content Include="Views\Musteri\Sil.cshtml" />
-    <Content Include="Views\Musteri\Detay.cshtml" />
+    <Content Include="Views\Musteri\Ekle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -380,6 +378,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

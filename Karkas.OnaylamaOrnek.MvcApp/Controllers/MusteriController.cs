@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Karkas.OnaylamaOrnek.Bs;
 using Karkas.OnaylamaOrnek.TypeLibrary;
+using Karkas.Web.Mvc.Controllers;
 
 namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 {
@@ -98,7 +99,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 				}
 				catch (Exception ex)
 				{
-					MesajEkleHata("Ekleme İşlemi Sırasında Hata oluştu",ex,dto);
+					MesajEkleHata("Güncelleme İşlemi Sırasında Hata oluştu",ex,dto);
 				}
 				return View(dto);
         }
@@ -129,9 +130,10 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
 				bs.Sil(key);
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+				MesajEkleHata("Silme İşlemi Sırasında Hata oluştu",ex,dto);
+                return View(dto);
             }
         }
     }
