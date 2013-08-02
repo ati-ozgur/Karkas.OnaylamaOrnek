@@ -94,7 +94,7 @@ if(mvcHost.AddActionMethods) {
         // POST: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/Guncelle/5
 
         [HttpPost]
-        public ActionResult Guncelle(int id, <#=typeLibraryClassName #> dto)
+        public ActionResult Guncelle(int key, <#=typeLibraryClassName #> dto)
         {
 			  try
 				{

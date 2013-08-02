@@ -84,7 +84,7 @@ namespace Karkas.OnaylamaOrnek.MvcApp.Controllers
         // POST: /Musteri/Guncelle/5
 
         [HttpPost]
-        public ActionResult Guncelle(int id, Musteri dto)
+        public ActionResult Guncelle(int key, Musteri dto)
         {
 			  try
 				{

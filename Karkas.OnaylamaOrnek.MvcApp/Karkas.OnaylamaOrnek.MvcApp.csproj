@@ -272,19 +272,19 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="CodeTemplates\AddView\CSHTML\Sil.tt">
+    <Content Include="CodeTemplates\AddView\CSHTML\KarkasSil.tt">
       <LastGenOutput>Sil.cshtml</LastGenOutput>
     </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Liste.tt">
+    <Content Include="CodeTemplates\AddView\CSHTML\KarkasListe.tt">
       <LastGenOutput>Liste.cshtml</LastGenOutput>
     </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Guncelle.tt">
+    <Content Include="CodeTemplates\AddView\CSHTML\KarkasGuncelle.tt">
       <LastGenOutput>Guncelle.cshtml</LastGenOutput>
     </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Ekle.tt">
+    <Content Include="CodeTemplates\AddView\CSHTML\KarkasEkle.tt">
       <LastGenOutput>Ekle.cshtml</LastGenOutput>
     </Content>
-    <Content Include="CodeTemplates\AddView\CSHTML\Detay.tt">
+    <Content Include="CodeTemplates\AddView\CSHTML\KarkasDetay.tt">
       <LastGenOutput>Detay.cshtml</LastGenOutput>
     </Content>
     <Content Include="CodeTemplates\AddController\Controller.tt">
@@ -353,6 +353,7 @@
     <Content Include="Views\Musteri\Detay.cshtml" />
     <Content Include="Views\Musteri\Ekle.cshtml" />
     <Content Include="Views\Musteri\Index.cshtml" />
+    <Content Include="Views\Musteri\Guncelle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
