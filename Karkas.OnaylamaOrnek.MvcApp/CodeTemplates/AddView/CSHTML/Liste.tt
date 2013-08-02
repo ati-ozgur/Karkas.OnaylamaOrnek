@@ -1,17 +1,5 @@
-﻿<#@ template language="C#" HostSpecific="True" #>
-<#@ output extension=".cshtml" #>
-<#@ assembly name="System.ComponentModel.DataAnnotations" #>
-<#@ assembly name="System.Core" #>
-<#@ assembly name="System.Data.Entity" #>
-<#@ assembly name="System.Data.Linq" #>
-<#@ import namespace="System" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.ComponentModel.DataAnnotations" #>
-<#@ import namespace="System.Data.Linq.Mapping" #>
-<#@ import namespace="System.Data.Objects.DataClasses" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Reflection" #>
-<#@ import namespace="Microsoft.VisualStudio.Web.Mvc.Scaffolding.BuiltIn" #>
+﻿<#@ template language="C#" HostSpecific="True" #><#@ output extension=".cshtml" #><#@ assembly name="System.ComponentModel.DataAnnotations" #><#@ assembly name="System.Core" #><#@ assembly name="System.Data.Entity" #><#@ assembly name="System.Data.Linq" #>
+<#@ import namespace="System" #><#@ import namespace="System.Collections.Generic" #><#@ import namespace="System.ComponentModel.DataAnnotations" #><#@ import namespace="System.Data.Linq.Mapping" #><#@ import namespace="System.Data.Objects.DataClasses" #><#@ import namespace="System.Linq" #><#@ import namespace="System.Reflection" #><#@ import namespace="Microsoft.VisualStudio.Web.Mvc.Scaffolding.BuiltIn" #>
 <#
 MvcTextTemplateHost mvcHost = MvcTemplateHost;
 #>
@@ -20,19 +8,16 @@ MvcTextTemplateHost mvcHost = MvcTemplateHost;
 // The following chained if-statement outputs the file header code and markup for a partial view, a content page, or a regular view.
 if(mvcHost.IsPartialView) {
 #>
-
 <#
 } else if(mvcHost.IsContentPage) {
 #>
-
 @{
     ViewBag.Title = "<#= mvcHost.ViewName#>";
 <#
 if (!String.IsNullOrEmpty(mvcHost.MasterPageFile)) {
 #>
     Layout = "<#= mvcHost.MasterPageFile#>";
-<#
-}
+<#}
 #>
 }
 
@@ -59,7 +44,7 @@ if (!String.IsNullOrEmpty(mvcHost.MasterPageFile)) {
 }
 #>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Ekle", "Ekle")
 </p>
 <table class="table">
 	<thead>
@@ -97,17 +82,17 @@ string pkName = GetPrimaryKeyName(mvcHost.ViewDataType);
 if (pkName != null) {
 #>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.<#= pkName #> }, new { @class="btn" }) |
-            @Html.ActionLink("Details", "Details", new { id=item.<#= pkName #> }, new { @class="btn" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.<#= pkName #> }, new { @class="btn" })
+            @Html.ActionLink("Guncelle", "Güncelle", new { id=item.<#= pkName #> }, new { @class="btn" }) |
+            @Html.ActionLink("Detay", "Detay", new { id=item.<#= pkName #> }, new { @class="btn" }) |
+            @Html.ActionLink("Sil", "Sil", new { id=item.<#= pkName #> }, new { @class="btn" })
         </td>
 <#
 } else {
 #>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }, new { @class="btn" }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class="btn" }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class="btn" })
+            @Html.ActionLink("Guncelle", "Güncelle", new { /* id=item.PrimaryKey */ }, new { @class="btn" }) |
+            @Html.ActionLink("Detay", "Detay", new { /* id=item.PrimaryKey */ }, new { @class="btn" }) |
+            @Html.ActionLink("Sil", "Sil", new { /* id=item.PrimaryKey */ }, new { @class="btn" })
         </td>
 <#
 }

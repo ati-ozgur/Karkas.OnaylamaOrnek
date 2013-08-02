@@ -1,0 +1,85 @@
+﻿
+
+
+@model IEnumerable<Karkas.OnaylamaOrnek.TypeLibrary.Musteri>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Index</h2>
+
+
+<p>
+    @Html.ActionLink("Ekle", "Ekle")
+</p>
+<table class="table">
+	<thead>
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Adi)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Soyadi)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Eposta)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Yasi)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ProfilePicture)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Hatalar)
+        </th>
+
+        <th></th>
+    </tr>
+	</thead>
+	<tbody>
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Adi)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyadi)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Eposta)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Yasi)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfilePicture)
+        </td>
+
+
+        <td>
+            @Html.ActionLink("Guncelle", "Güncelle", new { id=item.MusteriKey }, new { @class="btn" }) |
+            @Html.ActionLink("Detay", "Detay", new { id=item.MusteriKey }, new { @class="btn" }) |
+            @Html.ActionLink("Sil", "Sil", new { id=item.MusteriKey }, new { @class="btn" })
+        </td>
+
+    </tr>
+}
+</tbody>
+</table>
+
+
+

@@ -143,56 +143,6 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary
 			}
 		}
 
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string MusteriKeyAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return musteriKey.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					long _a = Convert.ToInt64(value);
-				MusteriKey = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"MusteriKey",string.Format(CEVIRI_YAZISI,"MusteriKey","long")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string YasiAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return yasi != null ? yasi.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					long _a = Convert.ToInt64(value);
-				Yasi = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"Yasi",string.Format(CEVIRI_YAZISI,"Yasi","long")));
-				}
-			}
-		}
-
 		public Musteri ShallowCopy()
 		{
 			Musteri obj = new Musteri();
@@ -205,12 +155,6 @@ namespace Karkas.OnaylamaOrnek.TypeLibrary
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "Adi"));			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "Soyadi"));			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "Eposta"));		}
 		public class PropertyIsimleri
 		{
 			public const string MusteriKey = "MusteriKey";

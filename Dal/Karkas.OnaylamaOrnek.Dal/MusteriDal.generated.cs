@@ -19,7 +19,7 @@ public partial class MusteriDal : BaseDal<Musteri>
 	{
 		get
 		{
-			return "Karkas.OnaylamaOrnek";
+			return "Karkas.Onaylama";
 		}
 	}
 	protected override void identityKolonDegeriniSetle(Musteri pTypeLibrary,long pIdentityKolonValue)
